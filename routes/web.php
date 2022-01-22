@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::delete('/posts/{post}','PostController@destory');
+
+Route::post('/posts/{post}','PostController@update');
+Route::get('/posts/{post}','PostController@edit');
 
 
-Route::get('about-laravel', 'AboutUsController');
+Route::post('/create','PostController@store');
+Route::get('/create','PostController@create');
 
-Route::get('/', function () {
-
-    dump(\App\Models\User::find(1));
-});
+Route::get('/','PostController@list');
