@@ -13,13 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('about-us', function (){
-    return redirect('about-laravel');
-});
 
-Route::get('about-laravel', function (){
-    return view('about-us');
-});
+
+Route::get('about-laravel', 'AboutUsController');
 
 Route::get('/', function () {
     return view('welcome');
