@@ -41,19 +41,34 @@ class PostController extends Controller
 
     }
 
-    public function edit($post)
+    public function edit(Post $post)
     {
 
-        return view('welcome');
+        return view('edit',[
+            'post'=>$post
+        ]);
+
+
     }
 
-    public function update($post)
+    public function update(Post $post)
     {
+        $data = request()->validate([
+            'content' => ['string']
+        ]);
+
+        $post->update($data);
+
+
+        return redirect('/');
 
     }
 
-    public function destory($post)
+    public function destory(Post $post)
     {
+        $post->delete();
+
+        return redirect('/');
 
     }
 }

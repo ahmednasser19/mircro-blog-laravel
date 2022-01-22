@@ -34,6 +34,7 @@
                 <a href="{{ url('/posts/'.$post->id) }}" class="sm:rounded-md bg-indigo-500 text-white p-2">Update</a>
                 <form action="{{url('/posts/'.$post->id)}}" method="POST" class="p-2 ml-2 rounded-md bg-red-500 text-white">
                     @method('DELETE')
+                    @csrf
                     <button type="submit">Delete</button>
                 </form>
             </div>
