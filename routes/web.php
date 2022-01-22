@@ -18,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('about-laravel', 'AboutUsController');
 
 Route::get('/', function () {
-    return view('welcome');
+
+    dump(\App\Models\User::find(1));
 });
